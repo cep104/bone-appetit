@@ -1,13 +1,11 @@
-// Place all the styles related to the users controller here.
+// Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-h1 {
-    text-align: center;
+ul {
     z-index: 2;
     position: relative;
+    list-style: none;
 }
-
-h3 {
-    z-index: 2;
-    position: relative;
+ul li a{
+text-decoration: none;
 }
