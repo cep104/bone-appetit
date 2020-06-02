@@ -1,7 +1,17 @@
+
+<% flash.each do |type, msg| %>
+  <div class="flashmessage">
+  <br>
+    <%= msg %>
+  </div>
+<% end %>
+
+<div id="sessionform"><h3>Log In </h3>
 <%= form_for(:user, url: login_path) do |f| %>
 <%= f.label :email %>
-<%= f.text_field :email %>
+<%= f.text_field :email %><br>
 <%= f.label :password %>
-<%= f.password_field :password %>
-<%= f.submit 'log in'%>
+<%= f.password_field :password %><br>
+<%= f.submit 'log in', :class => "button"%>
 <% end %>
+</div>

@@ -8,7 +8,8 @@ class SessionsController < ApplicationController
           session[:user_id] = @user.id 
           redirect_to user_path(@user)
         else
-          redirect_to signup_path
+        flash[:notice] = 'EMAIL OR PASSWORD INCORRECT'
+          render :new
         end
       end
 

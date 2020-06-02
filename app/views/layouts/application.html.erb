@@ -4,13 +4,15 @@
     <title>BoneAppetit</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-  <nav>
+  <div id="container">
+  <header><h1><%= image_tag("fish.png", {:style => "width:4%;"}) %> BONE-APPETIT</h1>
+  <nav class="stroke">
   <ul>
   <li><%= link_to "Sign Up", signup_path %></li>
   <li><%= link_to "Log In", login_path %></li>
@@ -21,6 +23,9 @@
     <% end %>
   </ul>
   </nav>
+  </header>
     <%= yield %>
+    <footer><p>&copy;CandiceCodes</p></footer>
+    </div>
   </body>
 </html>
