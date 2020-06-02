@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pet_categories
+  resources :recipes
   resources :users, except: [:new]
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

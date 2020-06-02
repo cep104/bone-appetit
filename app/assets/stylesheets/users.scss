@@ -7,14 +7,18 @@
 //     position: relative;
     
 // }
-
+#user-show h1{
+text-align: center;
+z-index: 2;
+    position: relative;
+}
 .userform h3 {
     z-index: 2;
     position: relative;
     padding-top: 5%;
     padding-left: 1%;
     margin-bottom: 0;
-    
+
 }
 
 form{

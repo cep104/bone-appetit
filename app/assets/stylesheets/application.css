@@ -25,6 +25,10 @@ header h1 {
    font-size: 3em;
    margin-bottom: 0;
 }
+header h1 a {
+    text-decoration: none;
+    color: black;
+}
 
 /* NAVIGATION */
 nav {
@@ -121,7 +125,6 @@ footer {
     text-align: right;
     position: absolute;
     bottom: 0;
-    background-color: #FCD28D; 
     width: 100%;
     
 }

@@ -1,0 +1,13 @@
+<%= form_for(@recipe) do |f| %>
+<%= pet_category_select(@recipe)%>
+<%= f.label :pet_category %>
+  <%= f.text_field :pet_category %><br>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  
+  <br/>
+
+  <%= f.submit %>
+<% end %>

@@ -11,12 +11,16 @@
 
   <body>
   <div id="container">
-  <header><h1><%= image_tag("fish.png", {:style => "width:4%;"}) %> BONE-APPETIT</h1>
+  <header> <h1><%= image_tag("fish.png", {:style => "width:4%;"}) %> <%= link_to "BONE-APPETIT", root_path %></h1>
   <nav class="stroke">
   <ul>
   <li><%= link_to "Sign Up", signup_path %></li>
   <li><%= link_to "Log In", login_path %></li>
+  <li><%= link_to :recipes, recipes_path %></li>
    <% if current_user %>
+    <li>
+      <%= link_to "My Page", user_path(current_user)%>
+      </li>
       <li>
       <%= link_to "Log Out", logout_path, method: :post %>
       </li>
