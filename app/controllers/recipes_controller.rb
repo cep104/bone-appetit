@@ -4,7 +4,11 @@ class RecipesController < ApplicationController
     
     
     def index
+        if params[:user_id]
+            @recipes = User.find(params[:user_id]).recipes
+          else
         @recipes = Recipe.all
+          end
     end
 
     def show
@@ -29,15 +33,17 @@ class RecipesController < ApplicationController
     end
 
     def edit
+        @recipe.recipe_img.attach(params[:recipe_img])
     end
 
     def update
         @recipe.update(recipe_params)
+        redirect_to recipe_path(@recipe)
     end
 
     private
     def recipe_params
-        params.require(:recipe).permit(:title, :description, :pet_category_id, :user_id, pet_category_attributes:[:name])
+        params.require(:recipe).permit(:title, :description, :pet_category_id, :user_id, :recipe_img, pet_category_attributes:[:name])
     end
 
     def set_recipe

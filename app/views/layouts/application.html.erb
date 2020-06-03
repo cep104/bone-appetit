@@ -19,11 +19,14 @@
   <li><%= link_to :recipes, recipes_path %></li>
    <% if current_user %>
     <li>
+      <%= link_to "Create Recipe", new_recipe_path %>
+    </li>
+    <li>
       <%= link_to "My Page", user_path(current_user)%>
-      </li>
-      <li>
+    </li>
+    <li>
       <%= link_to "Log Out", logout_path, method: :post %>
-      </li>
+    </li>
     <% end %>
   </ul>
   </nav>

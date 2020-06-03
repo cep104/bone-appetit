@@ -9,7 +9,9 @@
 // }
 #user-show h1{
 text-align: center;
-z-index: 2;
+}
+#user-show {
+    z-index: 2;
     position: relative;
 }
 .userform h3 {

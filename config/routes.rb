@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :pet_categories
   resources :recipes
-  resources :users, except: [:new]
+  resources :users, except: [:new] do 
+    resources :recipes, only: [:show, :index]
+  end
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'

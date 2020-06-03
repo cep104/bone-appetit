@@ -1,11 +1,20 @@
+<% if @recipe.errors.any? %>
+<ul>
+  <% @recipe.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  <% end %>
 <%= form_for(@recipe) do |f| %>
-<%= pet_category_select(@recipe)%>
-<%= f.label :pet_category %>
-  <%= f.text_field :pet_category %><br>
+<%= f.label "Select A Pet Category" %>
+<%= pet_category_select(@recipe)%><br>
+<%= f.label "Or Create New Pet Category" %>
+  <%= f.text_field :pet_category%><br>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
   <%= f.label :description %>
-  <%= f.text_field :description %>
+  <%= f.text_area :description %><br>
+  <%= f.label "Recipe Image"%>
+<%= f.file_field :recipe_img %>
   
   <br/>
 

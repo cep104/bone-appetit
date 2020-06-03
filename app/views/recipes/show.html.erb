@@ -1,0 +1,16 @@
+<div id="recipeshow">
+<h1><%= @recipe.title %></h1>
+<% if @recipe.recipe_img.attached? %>
+<div class="showimg">
+<image src="<%=(url_for(@recipe.recipe_img))%>">
+</div>
+<% end %>
+<div class="info">
+<h3>Description:</h3><p><%= @recipe.description %></p>
+<h3>Pet Category: </h3><p><%= @recipe.pet_category.name%></p>
+<p>Created by: <%= @recipe.user.name %></p>
+<% if current_user == @recipe.user %>
+<%= link_to "Edit Recipe", edit_recipe_path(@recipe)%>
+<% end %>
+</div>
+</div>

@@ -1,4 +1,10 @@
-<div id="user-show"><h1><%= image_tag("pawprint.png", {:style => "width:4%;"}) %> Welcome <%= @user.name.capitalize %> <%= image_tag("pawprint.png", {:style => "width:4%;"}) %></h1>
-<h3>Pets:</h3>
-<h3>Recipes:</h3>
+<div id="user-show">
+<h1><%= image_tag("pawprint.png", {:style => "width:4%;"}) %> Welcome <%= @user.name.capitalize %> <%= image_tag("pawprint.png", {:style => "width:4%;"}) %></h1>
+<h3>My Pets:</h3>
+<h3>My Recipes:</h3>
+<ul><% @user.recipes.each do |recipe|%>
+<li><%= link_to recipe.title, user_recipe_path(recipe.user_id, recipe) %></li>
+
+<% end %>
+</ul>
 </div>

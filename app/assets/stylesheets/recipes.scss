@@ -1,3 +1,43 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+#recipeshow img {
+    border-radius: 100px;
+    border: rgb(140, 135, 131) 5px solid;
+    z-index: 2;
+    position: relative;
+    width:auto;
+    max-height: 200px;  
+}
+.showimg {
+    text-align: center;
+    margin-bottom: 1%;
+}
+#recipeshow {
+    z-index: 2;
+    position: relative;
+    text-align: center;
+}
+.info {
+    background-color:#DEC1A6;
+    display: inline-block;
+    padding: 1% 4%;
+    border: 6px double #C4F5ED;
+}
+.info a {
+    text-decoration: none;
+    color: black;
+    background-color: rgb(245, 245, 245);
+    padding:.25em;
+    
+}
+.info a:hover {
+    background-color:#C4F5ED;
+}
+.recipepage {
+    z-index: 2;
+    position: relative;
+}
+
+
+
