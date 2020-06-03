@@ -21,7 +21,7 @@
   <li><%= link_to :recipes, recipes_path %></li>
    <% if current_user %>
     <li>
-      <%= link_to "Create Recipe", new_recipe_path %>
+      <%= link_to "Create Recipe", new_user_recipe_path(current_user) %>
     </li>
     <li>
       <%= link_to "My Page", user_path(current_user)%>
