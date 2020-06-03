@@ -1,11 +1,7 @@
-<div class="recipepage">
+<div class="recipe-page">
 <h1>Recipes</h1>
 <ul><% @recipes.each do |recipe| %>
-<% if current_user %>
 <li><%=link_to recipe.title, recipe_path(recipe) %></li>
-<% else %>
-<li><%=link_to recipe.title, signup_path %></li>
-<% end %>
 <% end %>
 </ul>
 </div>

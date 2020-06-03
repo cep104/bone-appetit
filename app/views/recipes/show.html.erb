@@ -1,7 +1,7 @@
-<div id="recipeshow">
+<div id="recipe-show">
 <h1><%= @recipe.title %></h1>
 <% if @recipe.recipe_img.attached? %>
-<div class="showimg">
+<div class="show-img">
 <image src="<%=(url_for(@recipe.recipe_img))%>">
 </div>
 <% end %>
@@ -11,6 +11,7 @@
 <p>Created by: <%= @recipe.user.name %></p>
 <% if current_user == @recipe.user %>
 <%= link_to "Edit Recipe", edit_recipe_path(@recipe)%>
+<%= link_to "Delete Recipe",  @recipe,  method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
 </div>
 </div>

@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
-    before_action :get_current_user, only: [:show, :new]
-    before_action :set_recipe, only: [:show, :edit, :update]
+    before_action :get_current_user, only: [:new]
+    before_action :set_recipe, only: [:show, :edit, :update, :destroy]
     
     
     def index
@@ -39,6 +39,10 @@ class RecipesController < ApplicationController
     def update
         @recipe.update(recipe_params)
         redirect_to recipe_path(@recipe)
+    end
+
+    def destroy
+        @recipe.destroy
     end
 
     private

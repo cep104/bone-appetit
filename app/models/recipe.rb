@@ -11,12 +11,4 @@ class Recipe < ApplicationRecord
           self.ca.build(pet_category: pet_category)
         end
       end
-    # def pet_category_name
-    #     self.try(:pet_category).try(:name)
-    #   end
-    
-    #   def pet_category_name=(name)
-    #     name = PetCategory.find_or_create_by(name: name)
-    #     self.pet_category = pet_category
-    #   end
 end

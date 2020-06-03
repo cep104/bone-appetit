@@ -6,9 +6,12 @@
   <% end %>
 <%= form_for(@recipe) do |f| %>
 <%= f.label "Select A Pet Category" %>
-<%= pet_category_select(@recipe)%><br>
+<%= f.collection_select :pet_category_id, PetCategory.all, :id, :name, prompt:true %><br>
 <%= f.label "Or Create New Pet Category" %>
-  <%= f.text_field :pet_category%><br>
+  <%= f.fields_for :pet_category, @recipe.build_pet_category do |pc|%>
+  <%= pc.label :name %>
+  <%= pc.text_field :name %><br>
+  <% end %>
   <%= f.label :title %>
   <%= f.text_field :title %><br>
   <%= f.label :description %>
