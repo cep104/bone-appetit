@@ -9,6 +9,9 @@ class RecipesController < ApplicationController
           else
         @recipes = Recipe.all
           end
+          if params[:q]
+            @recipes = @recipes.search(params[:q].downcase)
+          end
     end
 
     def show

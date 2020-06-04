@@ -11,4 +11,8 @@ class Recipe < ApplicationRecord
           self.ca.build(pet_category: pet_category)
         end
       end
+
+    def self.search(params)
+        where("LOWER(title) = ?", params)
+    end
 end
