@@ -13,6 +13,6 @@ class Recipe < ApplicationRecord
       end
 
     def self.search(params)
-        where("LOWER(title) = ?", params)
+        where("LOWER(title) LIKE ?", "%#{params}%")
     end
 end
