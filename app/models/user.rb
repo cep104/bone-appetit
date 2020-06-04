@@ -8,12 +8,12 @@ class User < ApplicationRecord
     validates :password, :presence => { :on => :create },
           :length   => { :minimum => 6, :allow_nil => true },
           :confirmation => true
-    validates :password_confirmation, :presence => true
+    # validates :password_confirmation, :presence => true
     has_secure_password
    
     def self.from_omniauth(auth)
         where(email: auth.info.email).first_or_initialize do |user|
-          user.name = auth.info.name
+          user.name = auth.info.first_name
           user.email = auth.info.email
           user.password = SecureRandom.hex
         end
