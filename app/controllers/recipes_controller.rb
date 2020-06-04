@@ -9,9 +9,9 @@ class RecipesController < ApplicationController
           else
         @recipes = Recipe.all
           end
-          if params[:q]
-            @recipes = @recipes.search(params[:q].downcase)
-          end
+            @recipes = @recipes.search(params[:q].downcase) if params[:q]
+            @recipes = @recipes.animal(params[:recipe][:pet_category_id]) if params[:recipe] && params[:recipe][:pet_category_id]
+          
     end
 
     def show
