@@ -12,11 +12,22 @@ background-color: burlywood;
     position: relative;
 }
 .userform h3 {
-    z-index: 2;
-    position: relative;
-    padding-top: 5%;
+    
     padding-left: 1%;
     margin-bottom: 0;
+
+}
+
+.userform {
+    z-index: 2;
+    position: relative;
+
+}
+.userform img {
+    padding: 1% 1%;
+}
+.imagesicons {
+    margin-left: 4%;
 
 }
 
