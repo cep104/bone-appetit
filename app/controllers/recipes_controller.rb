@@ -10,8 +10,7 @@ class RecipesController < ApplicationController
         @recipes = Recipe.all
           end
             @recipes = @recipes.search(params[:q].downcase) if params[:q]
-            @recipes = @recipes.animal(params[:recipe][:pet_category_id]) if params[:recipe] && params[:recipe][:pet_category_id]
-          
+            @recipes = @recipes.animal(params[:recipe][:pet_category_id]) if params[:recipe] && params[:recipe][:pet_category_id]      
     end
 
     def show
@@ -46,6 +45,7 @@ class RecipesController < ApplicationController
 
     def destroy
         @recipe.destroy
+        redirect_to recipes_path
     end
 
     private

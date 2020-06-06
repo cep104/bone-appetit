@@ -4,22 +4,4 @@
     <li><%= msg %></li>
   <% end %>
   <% end %>
-<%= form_for(@recipe) do |f| %>
-<%= f.label "Select A Pet Category" %>
-<%= f.collection_select :pet_category_id, PetCategory.all, :id, :name, prompt:true %><br>
-<%= f.label "Or Create New Pet Category" %>
-  <%= f.fields_for :pet_category, @recipe.build_pet_category do |pc|%>
-  <%= pc.label :name %>
-  <%= pc.text_field :name %><br>
-  <% end %>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br>
-  <%= f.label :description %>
-  <%= f.text_area :description %><br>
-  <%= f.label "Recipe Image"%>
-<%= f.file_field :recipe_img %>
-  
-  <br/>
-
-  <%= f.submit %>
-<% end %>
+<%= render partial: "form", locals: {recipe: @recipe} %>

@@ -19,10 +19,5 @@
 <%= f.password_field :password_confirmation %><br>
 <%= f.submit "create user", :class => "button" %>
 <% end %>
-
-<h3>Or sign in with Google or Facebook:</h3>
-<div class="imagesicons">
-<%= link_to image_tag("googleicon.png", {:style => "width:4%;"}), '/auth/google_oauth2' %>
-<%= link_to image_tag("fbicon.png", {:style => "width:4%;"}), '/auth/facebook' %>
-</div>
+<%= render partial: "social" %>
 </div>

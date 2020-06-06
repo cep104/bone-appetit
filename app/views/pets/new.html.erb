@@ -1,0 +1,7 @@
+<% if @pet.errors.any? %>
+<ul>
+  <% @pet.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+  <% end %>
+  <% end %>
+<%= render partial: "form", locals: {recipe: @pet} %>

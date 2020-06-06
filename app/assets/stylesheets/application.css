@@ -13,6 +13,8 @@
  *= require_tree .
  *= require_self
  */
+
+ 
 header {
     z-index: 2;
     position: relative;
@@ -91,12 +93,12 @@ nav {
     
     position: relative;
     background: white;
-    overflow: scroll;
     font-family: 'Oswald', sans-serif;
     max-width: 1280px;
     margin: 0 auto;
     height:100vh;
-    
+    background-color: rgb(241,242,254)
+    ;
     
 }
 
@@ -111,13 +113,14 @@ nav {
     z-index: 1;
     opacity: 0.6;
     background-image: url('dogfood.jpeg');
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     background-position: 50% 0;
     -ms-background-size: cover;
     -o-background-size: cover;
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
+    
   
 }
 

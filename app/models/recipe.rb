@@ -5,11 +5,11 @@ class Recipe < ApplicationRecord
     accepts_nested_attributes_for :pet_category, reject_if: :all_blank
     validates :title, presence: true
     validates :description, presence: true
+    validates_associated :pet_category
+    
 
     scope :animal, -> (params){where("pet_category_id = ?", params)}
-    # def self.filter(params)
-    #     where("cat_id = ?", params)
-    # end
+    
     def pet_cattegory_attributes=(attributes)
         attributes.values.each do  |ca|
           pet_category = PetCategory.find_or_create_by(ca)
