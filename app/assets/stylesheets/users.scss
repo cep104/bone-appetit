@@ -14,12 +14,25 @@ background-color: burlywood;
 #user-show a {
     text-decoration: none;
     color:black;
+    
 }
+#user-show h4 {
+    margin-left:3%;
+    background-color: rgb(208, 238, 242);
+    display: inline-block;
+    font-size: 1.25em;
+    padding: .25%;
+}
+
 .userform h3 {
     
     padding-left: 1%;
     margin-bottom: 0;
 
+}
+#user-show h3 {
+    margin-left: 1%;
+    font-size: 2em;
 }
 
 .userform {

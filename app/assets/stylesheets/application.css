@@ -92,13 +92,12 @@ nav {
 #container {
     
     position: relative;
-    background: white;
     font-family: 'Oswald', sans-serif;
     max-width: 1280px;
     margin: 0 auto;
     height:100vh;
-    background-color: rgb(241,242,254)
-    ;
+    background-color: rgb(226, 227, 252);
+    overflow: scroll;
     
 }
 
@@ -120,6 +119,7 @@ nav {
     -moz-background-size: cover;
     -webkit-background-size: cover;
     background-size: cover;
+    
     
   
 }

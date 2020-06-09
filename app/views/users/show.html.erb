@@ -6,7 +6,7 @@
 <li><%= link_to pet.name, user_pet_path(pet.user_id, pet) %></li>
 </ul>
 <% end %>
-<%= link_to "Add a Pet", new_user_pet_path(current_user) %>
+<h4><%= link_to "Add a Pet", new_user_pet_path(current_user) %></h4>
 <h3>My Recipes:</h3>
 
 <ul><% @user.recipes.each do |recipe|%>
