@@ -2,7 +2,7 @@
 <h1><%= @pet.name %></h1>
 <% if @pet.pet_img.attached? %>
 <div class="show-img">
-<image src="<%=(url_for(@pet.pet_img))%>">
+ <%= image_tag url_for(@pet.pet_img)%>
 </div>
 <% end %>
 <div class="info">

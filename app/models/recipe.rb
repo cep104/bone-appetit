@@ -1,8 +1,9 @@
 class Recipe < ApplicationRecord
     belongs_to :pet_category 
     belongs_to :user
+    has_many :measurements 
+    has_many :ingredients, through: :measurements
     has_one_attached :recipe_img
-    # accepts_nested_attributes_for :pet_category, reject_if: :all_blank
     validates :title, presence: true
     validates :description, presence: true
     validates_associated :pet_category,  message: "Is Already Created"

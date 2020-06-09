@@ -4,7 +4,6 @@
 <div class="recipe-page">
 <ul><% @user.pets.each do |pet|%>
 <li><%= link_to pet.name, user_pet_path(pet.user_id, pet) %> - <%= pet.pet_category.name %></li>
-
 <% end %>
 </ul>
 <h4><%= link_to "Add a Pet", new_user_pet_path(current_user) %></h4>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :ingredients
+  resources :measurements
   resources :pets
   resources :pet_categories
   resources :recipes

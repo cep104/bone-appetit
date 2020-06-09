@@ -6,8 +6,13 @@ class Pet < ApplicationRecord
     validates_associated :pet_category,  message: "Is Already Created"
     validate :not_a_duplicate
 
+    def thumbnail
+        self.pet_img.variant(resize: "100x100")
+      end
+
+   
+
     def not_a_duplicate
-        # if there is already an ice cream with that flavor && brand, throw an error
         pet = Pet.find_by(name: name, pet_category_id: pet_category_id, user_id: user_id)
         if !!pet && pet != self
           errors.add(:pet, 'has already been added.')
