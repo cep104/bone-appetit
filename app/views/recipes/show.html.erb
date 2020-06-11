@@ -8,12 +8,13 @@
 <div class="info">
 <h4>Description:</h4><p><%= @recipe.description %></p>
 <h4>Instructions:</h4><p><%= @recipe.instructions %></p>
+<h4>ingredients:</h4>
 <ul>
 <% @recipe.measurements.each do |m|%>
-    <li><strong><%= m.ingredient.name%></strong> - <%=m.quantity%> <%=m.unit%></li>
+    <li><%= m.ingredient.name%> - <%=m.quantity%> <%=m.unit%></li>
   <% end %>
   </ul>
-<h3>Pet Category: </h3><p><%= @recipe.pet_category.name%></p>
+<h4>Pet Category: </h4><p><%= @recipe.pet_category.name%></p>
 <p>Created by: <%= @recipe.user.name %></p>
 <% if current_user == @recipe.user %>
 <%= link_to "Edit Recipe", edit_recipe_path(@recipe)%>
