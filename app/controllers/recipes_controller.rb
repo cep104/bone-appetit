@@ -9,8 +9,11 @@ class RecipesController < ApplicationController
           else
         @recipes = Recipe.all
           end
+          
             @recipes = @recipes.search(params[:q].downcase) if params[:q]
-            @recipes = @recipes.animal(params[:recipe][:pet_category_id]) if params[:recipe] && params[:recipe][:pet_category_id]      
+            @recipes = @recipes.animal(params[:recipe][:pet_category_id]) if params[:recipe] && params[:recipe][:pet_category_id] 
+            @recipes = @recipes.food(params[:ingredient].downcase) if params[:ingredient]
+              
     end
 
     def show
@@ -22,25 +25,39 @@ class RecipesController < ApplicationController
             alert: "Pet Category not found"
           else
           @recipe = Recipe.new(pet_category_id: params[:pet_category_id])
+          4.times do 
+            m = @recipe.measurements.build
+            m.build_ingredient
+          end
           end
     end 
 
     def create
+        
         @recipe = current_user.recipes.new(recipe_params)
         if @recipe.save
         redirect_to recipe_path(@recipe)
         else 
+        4.times do 
+            m = @recipe.measurements.build
+            m.build_ingredient
+            end
         render :new
         end
     end
 
     def edit
         @recipe.recipe_img.attach(params[:recipe_img])
+        
     end
 
     def update
         @recipe.update(recipe_params)
+        if @recipe.save
         redirect_to recipe_path(@recipe)
+        else
+        render :edit
+        end
     end
 
     def destroy
@@ -50,7 +67,7 @@ class RecipesController < ApplicationController
 
     private
     def recipe_params
-        params.require(:recipe).permit(:title, :description, :pet_category_id, :user_id, :recipe_img, ingrediets: [], pet_category_attributes:[:name])
+        params.require(:recipe).permit(:title, :description, :pet_category_id, :user_id, :recipe_img, ingredient_ids: [], pet_category_attributes:[:name], measurements_attributes:[:unit, :quantity, ingredient_attributes:[:name]])
     end
 
     def set_recipe
