@@ -7,7 +7,7 @@
 <% end %>
 <div class="info">
 <h4>Description:</h4><p><%= @recipe.description %></p>
-<h4>ingredients:</h4>
+<h4>Ingredients:</h4>
 <ul>
 <% @recipe.measurements.each do |m|%>
     <li><%= m.ingredient.name%> - <%=m.quantity%> <%=m.unit%></li>
