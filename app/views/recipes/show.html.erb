@@ -7,13 +7,13 @@
 <% end %>
 <div class="info">
 <h4>Description:</h4><p><%= @recipe.description %></p>
-<h4>Instructions:</h4><p><%= @recipe.instructions %></p>
 <h4>ingredients:</h4>
 <ul>
 <% @recipe.measurements.each do |m|%>
     <li><%= m.ingredient.name%> - <%=m.quantity%> <%=m.unit%></li>
   <% end %>
   </ul>
+<h4>Instructions:</h4><p class="inst"><%= @recipe.instructions %></p>
 <h4>Pet Category: </h4><p><%= @recipe.pet_category.name%></p>
 <p>Created by: <%= @recipe.user.name %></p>
 <% if current_user == @recipe.user %>
