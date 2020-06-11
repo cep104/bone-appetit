@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :ingredients
   resources :measurements
   resources :pets
-  resources :pet_categories
   resources :recipes
   resources :users, except: [:new] do 
     resources :recipes, only: [:show, :index, :new]

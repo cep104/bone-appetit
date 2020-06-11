@@ -6,6 +6,7 @@ class Recipe < ApplicationRecord
     has_one_attached :recipe_img
     validates :title, presence: true
     validates :description, presence: true
+    validates :instructions, presence: true
     validates_associated :pet_category,  message: "Is Already Created"
     
 
