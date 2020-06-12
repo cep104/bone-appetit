@@ -10,7 +10,7 @@ class Recipe < ApplicationRecord
     validates_associated :pet_category,  message: "Is Already Created"
     accepts_nested_attributes_for :measurements, reject_if: proc {|measurement_params| measurement_params.values.any?(&:empty?) ||
    (measurement_params["ingredient_attributes"]["name"].blank? && !measurement_params["ingredient_id"])}
-
+#same as {|c|c.empty?}
     scope :animal, -> (params){where("pet_category_id = ?", params)}
     
     

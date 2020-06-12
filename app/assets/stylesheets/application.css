@@ -31,6 +31,9 @@ header h1 a {
     text-decoration: none;
     color: black;
 }
+header h1 img {
+  width:4%;
+}
 
 /* NAVIGATION */
 nav {
@@ -97,7 +100,7 @@ nav {
     margin: 0 auto;
     height:100vh;
     background-color: rgb(226, 227, 252);
-    overflow: scroll;
+    overflow: auto;
     
 }
 
@@ -127,9 +130,8 @@ nav {
 
 footer {
     text-align: right;
-    position: absolute;
-    bottom: 0;
     width: 100%;
+    color: rgb(135, 135, 135);
     
 }
 
