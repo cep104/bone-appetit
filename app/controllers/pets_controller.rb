@@ -2,8 +2,7 @@ class PetsController < ApplicationController
     before_action :get_current_user, only: [:new]
     before_action :set_pet, only: [:show, :edit, :update, :destroy]
 
-    def show
-       
+    def show 
     end
 
     def new
@@ -36,8 +35,10 @@ class PetsController < ApplicationController
     def destroy
         @user = current_user
         @pet.destroy
-        redirect_to @user
+        redirect_to user_path(@user)
     end
+    
+    private
 
     def pet_params
         params.require(:pet).permit(:name, :pet_category_id, :user_id, :pet_img, pet_category_attributes:[:id, :name, :_destroy])
