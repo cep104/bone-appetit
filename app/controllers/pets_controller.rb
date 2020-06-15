@@ -1,6 +1,9 @@
 class PetsController < ApplicationController
-    before_action :get_current_user, only: [:new]
+    before_action :get_current_user, only: [:new, :destroy]
     before_action :set_pet, only: [:show, :edit, :update, :destroy]
+    def index
+        redirect_to user_path(current_user)
+    end
 
     def show 
     end
@@ -33,7 +36,6 @@ class PetsController < ApplicationController
     end
 
     def destroy
-        @user = current_user
         @pet.destroy
         redirect_to user_path(@user)
     end
