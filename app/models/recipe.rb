@@ -19,21 +19,7 @@ class Recipe < ApplicationRecord
         self.pet_category = PetCategory.find_or_create_by(attributes) if !attributes['name'].empty?
         self.pet_category
       end
-      
-#    def ingredients_attributes=(attributes)
-#      attributes.values.each do |v|
-#        self.ingredients << Ingredient.find_or_create_by(v) if !v['name'].empty?
-#      end
-#   end
-
-#    def measurements_attributes=(attributes)
-#     attributes.values.each do |measurement_params|
-#       if !measurement_params.values.any?(&:empty?) && (!measurement_params["ingredient_attributes"]["name"].blank?)
-#           self.measurements << Measurement.create(measurement_params)
-#       end
-#     end
-#   end
-  
+   
     def self.food(params)
         joins(:ingredients).where("LOWER(name) LIKE :term", term: "%#{params}%")
     end

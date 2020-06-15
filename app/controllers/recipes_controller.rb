@@ -13,7 +13,7 @@ class RecipesController < ApplicationController
             @recipes = @recipes.search(params[:q].downcase) if params[:q]
             @recipes = @recipes.animal(params[:recipe][:pet_category_id]) if params[:recipe] && params[:recipe][:pet_category_id] 
             @recipes = @recipes.food(params[:ingredient].downcase) if params[:ingredient]
-       
+            
     end
 
     def show

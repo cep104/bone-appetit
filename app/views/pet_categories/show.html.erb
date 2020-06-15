@@ -1,5 +1,0 @@
-<h2><%= @pet_category.name %></h2>
-<ul><% @pet_category.recipes.each do |recipe|%>
-<li><%= link_to recipe.title, recipe_path(recipe)%></li>
-<% end %>
-</ul>
