@@ -2,7 +2,7 @@
 <h1><%= @recipe.title %></h1>
 <% if @recipe.recipe_img.attached? %>
 <div class="show-img">
-<image src="<%=(url_for(@recipe.recipe_img))%>">
+<%= image_tag url_for(@recipe.recipe_img)%>
 </div>
 <% end %>
 <div class="info">
