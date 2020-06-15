@@ -1,13 +1,13 @@
 class RecipesController < ApplicationController
-    before_action :get_current_user, only: [:new]
+    before_action :get_current_user, only: [:new, :index]
     before_action :set_recipe, only: [:show, :edit, :update, :destroy]
     
     
     def index
         if params[:user_id]
-            @recipes = User.find(params[:user_id]).recipes
+            @recipes = @user.recipes
         else
-            @recipes = Recipe.all
+            @recipes = Recipe.all.order(:title)
         end
           
             @recipes = @recipes.search(params[:q].downcase) if params[:q]
