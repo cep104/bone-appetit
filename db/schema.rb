@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_11_013457) do
+ActiveRecord::Schema.define(version: 2020_06_15_045107) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2020_06_11_013457) do
   end
 
   create_table "measurements", force: :cascade do |t|
-    t.integer "quantity"
+    t.float "quantity"
     t.string "unit"
     t.integer "ingredient_id"
     t.integer "recipe_id"

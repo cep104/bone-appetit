@@ -1,8 +1,8 @@
 class PetsController < ApplicationController
-    before_action :get_current_user, only: [:new, :destroy]
+    before_action :get_current_user, only: [:new, :destroy, :index]
     before_action :set_pet, only: [:show, :edit, :update, :destroy]
     def index
-        redirect_to user_path(current_user)
+        redirect_to user_path(@user)
     end
 
     def show 
@@ -51,6 +51,6 @@ class PetsController < ApplicationController
     end
 
     def get_current_user
-        @user = User.find(session[:user_id])
+        @user = current_user
       end
 end

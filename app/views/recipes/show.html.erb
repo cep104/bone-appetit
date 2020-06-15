@@ -10,7 +10,7 @@
 <h4>Ingredients:</h4>
 <ul>
 <% @recipe.measurements.each do |m|%>
-    <li><%= m.ingredient.name%> - <%=m.quantity%> <%=m.unit%></li>
+    <li><%= m.ingredient.name%> - <%=number_with_precision(m.quantity,strip_insignificant_zeros: true)%> <%=m.unit%></li>
   <% end %>
   </ul>
 <h4>Instructions:</h4><p class="inst"><%= @recipe.instructions %></p>
